@@ -1,19 +1,14 @@
 package dolyame
 
 import (
-	"crypto/tls"
 	"net/http"
 )
 
 type Client struct {
-	certificate     tls.Certificate
-	httpClient      *http.Client
-	login           string
-	password        string
-	host            string
-	notificationURL string
-	successURL      string
-	failURL         string
+	httpClient *http.Client
+	login      string
+	password   string
+	host       string
 }
 
 func NewClient() *Client {
@@ -35,17 +30,7 @@ func (c *Client) SetHost(host string) *Client {
 	return c
 }
 
-func (c *Client) SetNotificationURL(url string) *Client {
-	c.notificationURL = url
-	return c
-}
-
-func (c *Client) SetSuccessURL(url string) *Client {
-	c.successURL = url
-	return c
-}
-
-func (c *Client) SetFailURL(url string) *Client {
-	c.failURL = url
+func (c *Client) SetHttpClient(client *http.Client) *Client {
+	c.httpClient = client
 	return c
 }

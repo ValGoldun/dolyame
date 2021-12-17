@@ -84,6 +84,26 @@ func (ci *ClientInfo) SetEmail(email string) *ClientInfo {
 	return ci
 }
 
+func (ci *ClientInfo) SetBirthDate(date string) *ClientInfo {
+	ci.BirthDate = date
+	return ci
+}
+
+func (ci *ClientInfo) SetFirstName(name string) *ClientInfo {
+	ci.FirstName = name
+	return ci
+}
+
+func (ci *ClientInfo) SetLastName(name string) *ClientInfo {
+	ci.LastName = name
+	return ci
+}
+
+func (ci *ClientInfo) SetMiddleName(name string) *ClientInfo {
+	ci.MiddleName = name
+	return ci
+}
+
 type PaymentSchedule struct {
 	Amount decimal.Decimal `json:"amount"`
 	Date   string          `json:"date"`
